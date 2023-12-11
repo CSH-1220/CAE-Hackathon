@@ -205,7 +205,7 @@ def preprocess_single_image(image_path):
     return image
 
 def yolo_predict(image_path, specific_classes, device):
-    model = YOLO('./object_detection.pt').to(device)
+    model = YOLO('./pretrained_model/object_detection.pt').to(device)
     results = model(image_path,verbose=False)
     yolo_boxes = []
     for result in results:
@@ -220,7 +220,7 @@ import torchvision.models.segmentation as segmentation
 def deeplab_predict(image_path, device):
     deeplab_model = segmentation.deeplabv3_resnet101(weights=segmentation.DeepLabV3_ResNet101_Weights.DEFAULT)
     deeplab_model.classifier[4] = torch.nn.Conv2d(256, 1, kernel_size=(1,1), stride=(1,1))
-    deeplab_model.load_state_dict(torch.load('./river_segmentation.pth'))
+    deeplab_model.load_state_dict(torch.load('./pretrained_model/river_segmentation.pth'))
     deeplab_model.to(device)
     image = Image.open(image_path).convert("RGB")
     transform = transforms.Compose([
@@ -298,7 +298,7 @@ def label_helper(model, image_path , device):
     for i in predicted_labels:
         print(f"{i[0]} {i[1]:.2f}%")
     print('=====================================')
-    detetction_model = YOLO('./object_detection.pt')
+    detetction_model = YOLO('./pretrained_model/object_detection.pt')
     result = detetction_model.predict(image_path, verbose=False)
     image = cv2.imread(image_path)
     if result[0].boxes.xyxy.numel() == 0:
