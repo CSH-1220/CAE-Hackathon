@@ -5,11 +5,11 @@ The introduction of our proposed backend solution to Eyes on the Water CAE hacka
 
 ## Install and Usage
 
-The required packages are listed in the [requirements.txt](folder/file_to_link_to.txt)
+The required packages are listed in the [requirements.txt](requirements.txt)
 
 ## System demonstration
 
-To demonstrate our system, open the [tutorial notebook](folder/file_to_link_to.txt):
+To demonstrate our system, open the [tutorial notebook](Demonstration.ipynb):
 
 If you want to test your own image dataset, simply add all the images to a directory. In the notebook, change the **img_dir** to the path of your directory (we recommend using an absolute path to avoid any issues with the notebook execution).
 
