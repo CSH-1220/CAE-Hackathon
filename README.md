@@ -5,7 +5,7 @@ The introduction of our proposed backend solution to Eyes on the Water CAE hacka
 
 ## Install and Usage
 
-The required packages are listed in the [requirements.txt](requirements.txt)
+The required packages are listed in the [requirements.txt](requirements.txt). You also need to [download](https://drive.google.com/file/d/1yaHq3LgZcm9kNkIoFZGduZYiYw1wqvG0/view?usp=sharing) the model's weights for all of the three tasks in our system. After unzip the file, put it under the CAE-Hackathon folder for running the scripts.
 
 ## System demonstration
 
